@@ -16,64 +16,95 @@
 <body>
     <div class="jumbotron">
         <h1>
-
             Friend Finder
         </h1>
         <br>
-        <i class="fas fa-people-carry"></i> Survey
-        <br>
-        <button></button>
-        <button></button>
+        <button><a href="home.html">Home</a></button>
+        <button><a href="survey.html">Survey</a></button>
     </div>
+    <!-- Result Modal -->
+    <div id="resultModal" class="modal-body">
+            <h5>You matched with...</h5>
+            <p>Display name/photo here</p>
+            <hr>
+            <h5>You both are a great match! Start a conversation with your new friend!</h5>
+            <!-- <p><button>Close</button></p> -->
+          </div>
+
+    <!-- Survey -->
     <div class="container">
         <form id="surveyForm">
             <div class="card-header">
                 <div class="form-group">
-                    <label for=""></label>
-                    <select class="form-control">
-                            <option>Default select</option>
-                          </select>
+                    <label for="header"></label>
+                    <i class="fas fa-people-carry"></i> Survey
                 </div>
             </div>
-            <div class="form-group">
-                <label for=""></label>
+            <div id="question1 questions" class="form-group">
+                <label for="question1"></label>
                 <select class="form-control">
-                        <option>Default select</option>
+                    <option value="5">Strongly Agree</option>
+                    <option value="4">Slightly Agree</option>
+                    <option value="3">Neutral</option>
+                    <option value="2">Slightly Disagree</option>
+                    <option value="1">Strongly Disagree</option>
                       </select>
             </div>
             <div class="form-group">
-                <label for=""></label>
+                <label for="question2"></label>
                 <select class="form-control">
-                        <option>Default select</option>
+                    <option value="5">Strongly Agree</option>
+                    <option value="4">Slightly Agree</option>
+                    <option value="3">Neutral</option>
+                    <option value="2">Slightly Disagree</option>
+                    <option value="1">Strongly Disagree</option>
                       </select>
             </div>
             <div class="form-group">
-                <label for=""></label>
+                <label for="question3"></label>
                 <select class="form-control">
-                        <option>Default select</option>
+                    <option value="5">Strongly Agree</option>
+                    <option value="4">Slightly Agree</option>
+                    <option value="3">Neutral</option>
+                    <option value="2">Slightly Disagree</option>
+                    <option value="1">Strongly Disagree</option>
                       </select>
             </div>
             <div class="form-group">
-                <label for=""></label>
+                <label for="question4"></label>
                 <select class="form-control">
-                        <option>Default select</option>
+                    <option value="5">Strongly Agree</option>
+                    <option value="4">Slightly Agree</option>
+                    <option value="3">Neutral</option>
+                    <option value="2">Slightly Disagree</option>
+                    <option value="1">Strongly Disagree</option>
                       </select>
             </div>
             <div class="form-group">
-                <label for=""></label>
+                <label for="question5"></label>
                 <select class="form-control">
-                        <option>Default select</option>
+                    <option value="5">Strongly Agree</option>
+                    <option value="4">Slightly Agree</option>
+                    <option value="3">Neutral</option>
+                    <option value="2">Slightly Disagree</option>
+                    <option value="1">Strongly Disagree</option>
                       </select>
             </div>
             <div class="form-group">
-                <label for=""></label>
+                <label for="question6"></label>
                 <select class="form-control">
-                        <option>Default select</option>
+                    <option value="5">Strongly Agree</option>
+                    <option value="4">Slightly Agree</option>
+                    <option value="3">Neutral</option>
+                    <option value="2">Slightly Disagree</option>
+                    <option value="1">Strongly Disagree</option>
                       </select>
+                      <br>
+                      <button type="button" id="submit" class="btn btn-outline-primary" data-toggle="modal" data-target="#resultModal">Submit</button>
             </div>
         </form>
     </div>
 </body>
-<script src="main.js"></script>
+<script src="/javascript/logic.js"></script>
 
 </html>
