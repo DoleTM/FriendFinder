@@ -1,10 +1,21 @@
-var friends = require("../data/friends");
-var path = require("path");
+const friends = require("../data/friends.js");
+const originalLength = friends.length;
 
-app.get("/api/friends", function(req,res){
-    res.json(friends);
-});
+module.exports = function(app) {
+    // Sends list of all stored friends
+    app.get("/api/friends", function(req, res) {
+        res.json(friends);
+    });
 
-app.post('/api/friends', function(req,res){
-    friends.push(req.body);
-});
+    // Storing data within friends
+    app.post("/api/friends", function(req, res) {
+        res.json({status: 200, complete : true, data : friends});
+        friends.push(req.body);
+        console.log(req.body);
+    });
+
+    app.post("/api/clear", function(req, res) {
+        friends.length = originalLength;
+        res.json({status: 200, complete : true, data : friends});
+    });
+};

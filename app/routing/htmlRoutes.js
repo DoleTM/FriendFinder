@@ -1,24 +1,18 @@
-var express = require("express");
-var path = require("path");
+const path = require("path");
 
-var app = express();
-var PORT = process.env.PORT || 3000;
+module.exports = function(app) {
+    // Opens up the survey taking page
+    app.get("/survey", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+    // Sending the assets folder containing front end css, javascript, and images
+    app.get("/assets/:folder/:file", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/assets/"+req.params.folder+"/"+req.params.file));
+    });
 
-app.get("/survey", function (req, res) {
-    res.sendFile(path.join(__dirname, "/../public/survey.html"));
-});
-
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "/../public/home.html"));
-});
-
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "/../public/home.html"));
-});
-
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+    // Setting default page to home.html
+    app.get("*", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+};
